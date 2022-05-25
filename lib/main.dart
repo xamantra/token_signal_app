@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:token_signal_app/src/firebase.service.dart';
+import 'package:token_signal_app/src/home.page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Scaffold(body: SizedBox()),
+      debugShowCheckedModeBanner: false,
+      home: const HomePage(),
     );
   }
 }

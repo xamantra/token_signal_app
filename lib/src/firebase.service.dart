@@ -13,6 +13,7 @@ Future<void> configFirebase() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
+  initFirebaseNotification();
   await FirebaseMessaging.instance.subscribeToTopic('all');
 }
 
