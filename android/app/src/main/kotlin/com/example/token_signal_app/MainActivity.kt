@@ -1,4 +1,4 @@
-package com.example.token_signal_app
+package dev.tokensignal.app
 
 import io.flutter.embedding.android.FlutterActivity
 

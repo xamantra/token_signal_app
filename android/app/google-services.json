@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "64473138907",
+    "project_id": "token-signal",
+    "storage_bucket": "token-signal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64473138907:android:d864b7e313d4564b92eefe",
+        "android_client_info": {
+          "package_name": "dev.tokensignal.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "64473138907-oll650u3e3cijf7m80beppe9eknmlq8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALjSukzrXnajB53-i5KlL7RMOTuJfjSaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "64473138907-oll650u3e3cijf7m80beppe9eknmlq8i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
