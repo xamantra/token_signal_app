@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:token_signal_app/firebase_options.dart';
+import 'package:token_signal_app/src/fcm_handler.dart';
 import 'package:token_signal_app/src/notification.local.dart';
 
 Future<void> configFirebase() async {
@@ -13,8 +14,8 @@ Future<void> configFirebase() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  initFirebaseNotification();
-  await FirebaseMessaging.instance.subscribeToTopic('all');
+  await initFirebaseNotification();
+  listenToFCM();
 }
 
 Completer firebaseInitializer = Completer();
@@ -25,13 +26,20 @@ Future<void> waitForFirebaseInit() async {
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   // If you're going to use other Firebase services in the background, such as Firestore,
   // make sure you call `initializeApp` before using other Firebase services.
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+}
+
+void subscribe() async {
+  await FirebaseMessaging.instance.subscribeToTopic('news');
+  if (kDebugMode) {
+    print(['SUBSCRIBE TO TOPIC']);
+  }
 }
 
 Future<void> initFirebaseNotification() async {
   try {
-    await Firebase.initializeApp();
-
     // Set the background messaging handler early on, as a named top-level function
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
