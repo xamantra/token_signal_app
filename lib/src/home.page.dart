@@ -97,12 +97,22 @@ class _ItemWidget extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 4),
-                      Text(
-                        timeago.format(DateTime.fromMillisecondsSinceEpoch(item.timestamp)),
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.white.withOpacity(0.7),
-                        ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            'assets/${item.sourceName.toLowerCase()}.png',
+                            width: 14,
+                            height: 14,
+                          ),
+                          const SizedBox(width: 4),
+                          Text(
+                            timeago.format(DateTime.fromMillisecondsSinceEpoch(item.timestamp)),
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white.withOpacity(0.7),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
