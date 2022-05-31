@@ -8,7 +8,7 @@ Future<List<NewsData>> getNewsList() async {
   var result = <NewsData>[];
 
   try {
-    final url = Uri.parse('https://token-signal-backend.herokuapp.com/api/news');
+    final url = Uri.parse('https://api.quantz.app/tokensignal/news');
     final response = await http.get(url);
     final obj = jsonDecode(response.body);
     if (obj is List) {
